@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro cliente</title>
+</head>
+<style>
+  .contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2pc;
+  }
+  .boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+</style>
+<body>
+<div class="contenedor">
+  <form action=""  method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.Nombre_Cliente.label}}
+      {{ form.Nombre_Cliente}}
+    </p>
+
+    <p>
+      {{ form.Email_Cliente.label}}
+      {{ form.Email_Cliente}}
+    </p>
+    <p>
+      {{ form.Contraseña_Cliente.label}}
+      {{ form.Contraseña_Cliente}}
+    </p>
+    <p class="boton">
+
+      {{ form.Boton_Clientes }}
+    
+    </p>
+   </form>
+</div>
+ 
+</body>
+</html>

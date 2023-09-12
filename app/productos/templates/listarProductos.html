@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Mostrar los mensajes flash-->
+{% for mensaje in get_flashed_messages() %}
+  <div class="alert alert-success alert-dismissable">
+    <button type="button" data-dismiss="alert" class="close">
+      &times;
+    </button>
+    {{ mensaje }}
+  </div>
+{% endfor %}
+
+<h1> Listado de productos </h1>
+  <a href="/productos/nuevo" class="btn btn-success">
+    Nuevo producto
+  </a>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Imagen</th>
+      <th>Actualizar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for producto in productos %}
+    <tr>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.precio }}</td>
+      <td><img src="imagenes/{{producto.imagen}}" alt="F" width="150" height="100"></td>
+      <td>
+        <a href="editar/{{ producto.id }}" class="btn btn-primary" >Actualizar</a>
+      </td>
+      <td>
+        <a href="eliminar/{{ producto.id }}" class="btn btn-primary" >Eliminar</a>
+      </td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
